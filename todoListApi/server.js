@@ -22,3 +22,15 @@ app.listen(port);
 
 
 console.log('todo list RESTful API server started on: ' + port);
+
+app.use(function(req, res) {
+  res.status(404).send({url: req.originalUrl + ' not found'})
+});
+
+/* 
+Open a new Terminal
+Create a new directory named data, which will contain the Mongo database
+Type mongod --port 27017 --dbpath /data/ to start a new instance and create a database
+Open another Terminal
+Type mongo --port 27017 to connect a Mongo shell to the instance
+*/
